@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base/src/ui/PhotosPage.dart';
-import 'package:flutter_base/src/ui/PostPage.dart'; 
+import 'package:flutter_base/src/ui/PostPage.dart';
 import 'package:flutter_base/src/ui/UserPage.dart';
 
 class HomePage extends StatefulWidget {
