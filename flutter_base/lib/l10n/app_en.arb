@@ -2,5 +2,8 @@
     "appTitle": "Dashboard Flutter",
     "bottomNaviUser": "USERS",
     "bottomNaviPhotos": "PHOTOS",
-    "bottomNaviPost": "POSTS"
+    "bottomNaviPost": "POSTS",
+    "titlePostPage" : "Post Page",
+    "titleUserPage" : "User Page",
+    "titlePhotoPage" : "Photo Page"
 }

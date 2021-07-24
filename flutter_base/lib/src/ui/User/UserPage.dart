@@ -1,10 +1,20 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart'; 
+import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
+import 'package:get/get.dart';
 
-import 'package:flutter_base/src/server/domain.dart';
-import 'package:flutter_base/src/model/User/UsersModel.dart';
+import '../../config/domain.dart';
+import '../../data/model/User/UsersModel.dart';
+import './UserController.dart';
+
+
+class ABC extends GetX {
+  final UserController userController = Get.put(UserController());
+
+  
+}
 
 class UserPage extends StatefulWidget {
   @override

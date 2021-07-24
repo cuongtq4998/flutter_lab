@@ -1,5 +1,5 @@
-import 'package:flutter_base/src/model/User/Child/AddressModel.dart';
-import 'package:flutter_base/src/model/User/Child/CompanyModel.dart';
+import '../User/Child/AddressModel.dart';
+import '../User/Child/CompanyModel.dart';
 
 class UsersModel {
   // properties

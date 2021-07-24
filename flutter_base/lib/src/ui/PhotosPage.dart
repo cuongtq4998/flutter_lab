@@ -3,8 +3,8 @@ import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:flutter_base/src/server/domain.dart';
-import 'package:flutter_base/src/model/PhotosModel.dart';
+import '../config/domain.dart';
+import '../data/model/PhotosModel.dart';
 
 class PhotosPage extends StatefulWidget {
   @override

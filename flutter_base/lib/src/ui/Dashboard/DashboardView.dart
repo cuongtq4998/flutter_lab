@@ -1,8 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_base/src/ui/Dashboard/DashboardController.dart';
-import 'package:flutter_base/src/ui/HomePage.dart';
+import 'package:flutter/material.dart'; 
 import 'package:get/get.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import '..//Dashboard/DashboardController.dart';
+import '../Home/HomePage.dart';
 
 class DashboardView extends StatelessWidget {
   @override
