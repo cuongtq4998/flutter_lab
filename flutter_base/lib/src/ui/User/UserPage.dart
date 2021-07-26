@@ -1,66 +1,45 @@
-import 'package:flutter/material.dart'; 
+import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:http/http.dart' as http;
-import 'dart:async';
-import 'dart:convert';
 import 'package:get/get.dart';
 
-import '../../config/domain.dart';
-import '../../data/model/User/UsersModel.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import './UserController.dart';
 
-
-class ABC extends GetX {
-  final UserController userController = Get.put(UserController());
-
-  
-}
-
-class UserPage extends StatefulWidget {
+class UserPage extends GetView<UserController> {
   @override
-  _UserState createState() => _UserState();
-}
-
-class _UserState extends State<UserPage> {
-   List<UsersModel> _data;
-
-  Future<String> getUsers() async {
-    var response =
-        await http.get(Uri.parse(Domain.userUrl), headers: {"Accept": "application/json"});
-
-    setState(() {
-      List res = json.decode(response.body);
-      _data = res.map((data) => UsersModel.fromJsonMap(data)).toList();
-    });
-    return "success";
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    getUsers();
-  }
-  
-    @override
   Widget build(BuildContext context) {
+    var title = AppLocalizations.of(context);
     return Scaffold(
-        appBar: AppBar(
-          title: Text('USERS'),
+      appBar: AppBar(
+        title: Text(title.titleUserPage),
+      ),
+      body: SafeArea(
+        child: Container(
+          child: GetX<UserController>(
+            initState: (state) {
+              Get.find<UserController>().getUserList();
+            },
+            builder: (item) {
+              return item.userList.length < 1
+                  ? Center(child: CircularProgressIndicator())
+                  : ListView.builder(
+                      itemCount: item.userList.length,
+                      itemBuilder: (context, index) {
+                        final items = item.userList[index];
+                        return ListTile(
+                          leading: CircleAvatar(
+                            backgroundColor: Colors.cyan,
+                          ),
+                          title: Text(items.name),
+                          subtitle: Text(items.username),
+                          isThreeLine: true,
+                          trailing: Text(items.website),
+                        );
+                      });
+            },
+          ),
         ),
-        body: ListView.builder(
-            itemCount: _data == null ? 0 : _data.length,
-            itemBuilder: (context, index) {
-              final item = _data[index];
-
-              return ListTile(
-                leading: CircleAvatar(
-                  backgroundColor: Colors.cyan,
-                ),
-                title: Text(item.name),
-                subtitle: Text(item.username),
-                isThreeLine: true,
-                trailing: Text(item.website),
-              );
-            }));
+      ),
+    );
   }
 }
