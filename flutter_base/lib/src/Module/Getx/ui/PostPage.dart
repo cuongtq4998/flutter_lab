@@ -3,8 +3,8 @@ import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:flutter_base/src/server/domain.dart';
-import 'package:flutter_base/src/model/PostModel.dart';
+import 'package:flutter_base/src/Module/Getx/server/domain.dart';
+import 'package:flutter_base/src/Module/Getx/model/PostModel.dart';
 
 class PostPage extends StatefulWidget {
   @override

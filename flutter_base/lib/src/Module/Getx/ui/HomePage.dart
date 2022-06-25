@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_base/src/ui/PhotosPage.dart';
-import 'package:flutter_base/src/ui/PostPage.dart'; 
-import 'package:flutter_base/src/ui/UserPage.dart';
+import 'package:flutter_base/src/Module/Getx/ui/PhotosPage.dart';
+import 'package:flutter_base/src/Module/Getx/ui/PostPage.dart';
+import 'package:flutter_base/src/Module/Getx/ui/UserPage.dart';
 
 class HomePage extends StatefulWidget {
   @override

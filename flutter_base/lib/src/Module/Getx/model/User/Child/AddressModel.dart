@@ -1,4 +1,4 @@
-import 'package:flutter_base/src/model/User/Child/GeoModel.dart';
+import 'package:flutter_base/src/Module/Getx/model/User/Child/GeoModel.dart';
 
 class AddressModel {
   String street;
